@@ -1,0 +1,169 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #f6e8ea;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: none, url('./../images/animals/dog_back_op1.jpg');
+    background-size: cover;
+    clip-path: none;
+    z-index: -1;
+}
+
+.hero_title,
+.hero_paragraph {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lilita One', cursive;
+    text-align: right;
+}
+
+.hero_title {
+    font-size: 3rem;
+    margin-block: 2vh;
+}
+
+.hero_paragraph {
+    font-size: 1.5em;
+}
+
+.hero_btn {
+    display: inline-block;
+    background-color: #693619;
+    color: #693619;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-family: 'Lilita One';
+    font-size: 4vh;
+    letter-spacing: .5vh;
+    word-spacing: .5vh;
+    transition: .5s;
+    background: rgba(246, 232, 234, 0.7);
+    box-shadow: inset 3px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.hero_btn:hover {
+    background: #f6e8ea;
+    box-shadow: inset 3px 5px 3px rgba(0, 0, 0, 0.25);
+    color:#EF626C;
+}
+
+.space {
+    margin: 30px 0px 25px 0px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.categories h3 {
+    text-decoration: none;
+    font-family: Nunito, cursive;
+    font-size: 18px;
+}
+
+.carousel-item h4{
+    text-align: center;
+    font-size: 2em;
+    line-height: 1em;
+    font-family: 'Lilita One';
+    color: #693619;
+    margin-top: 10px;
+    margin-bottom: 1.5em;
+}
+
+.categories nav a {
+    padding: 0 20px;
+    cursor: pointer;
+    height: 24px;
+    list-style: none;
+    text-decoration: none;
+    color: #312f2f;
+    border-left: 3px solid #17bebb;
+}
+
+.border_right {
+    border-right: 3px solid #17bebb;
+}
+
+.categories nav a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+}
+
+.adoption_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0vh;
+    grid-row-gap: 0vh;
+}
+
+.mark_list {
+    list-style-image: url('./../icons/huella-negro-vacio.svg');
+}
+
+.list-soltero {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.list-familiar {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.mark_list li {
+    font-size: medium;
+    line-height: 1.8em;
+}
+
+.donation {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+
+}
+
+.donation h4 {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    color: #312f2f;
+}
+
+.donation a img {
+    object-fit: cover;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 16px;
+    background: #D9D9D9;
+    opacity: 0.75;
+}
+
+.carousel_img {    
+    object-fit: cover;
+	height: 350px;
+	width: 350px;
+	border-radius: 15px;
+	box-shadow: 0 2px 5px 0 rgb(0, 0, 0.5);	
+}

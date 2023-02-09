@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="./logo/pac_op1.svg"/>
+    <title>Animales</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles/animals.css">
+    <script src="./js/login.js"></script>    
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="./js/animals.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <nav class="navbar navbar-expand-sm flex-sm-nowrap flex-wrap">
+            <div class="container-fluid">
+                <a class="navbar-brand flex-grow-0" href="./index.html">
+                    <img src="./logo/cafe.png" alt="patitas_a_casa_logo" width="150" height="80">
+                </a>
+                <div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="navbar5">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Adoptar
+                            </a>
+                            <ul class="dropdown-menu" style="background: #f6e8ea;">
+                              <li><a class="dropdown-item" href="./adoption.html">Adopción</a></li>
+                              <li><a class="dropdown-item" href="./animals.html">Animales</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">¿Quiénes somos?</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-grow-2 ms-auto mb-2 mb-lg-0">
+                    <a class="nav-link d-flex" data-bs-toggle="modal" data-bs-target="#loginModal"
+                        style="cursor: pointer; color: black">
+                        Iniciar Sesión
+                        <img src="./icons/perfil.svg" alt="Logo" width="30" height="24">
+                    </a>
+                </div>
+                <button class="navbar-toggler flex-grow-sm-1 flex-grow-0 me-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar5">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!--Login modal-->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog login_modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img class="footer_logo" src="./logo/cafe.png" alt="PATITAS A CASA">
+                        </div>
+                        <div class="login_form">
+                            <div style="display: block;" id="signInForm">
+                                <h5 class="fw-bold text-center">¡Que lindo verte de vuelta!</h5>
+                                <div class="mb-3">
+                                    <label for="nameInput" class="form-label">Nombre de usuario <span
+                                            style="color: red;">*</span></label>
+                                    <input type="text" class="form-control" id="nameInput" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPasswordInput" class="form-label">Contraseña <span
+                                            style="color: red;">*</span></label>
+                                    <input type="password" class="form-control" id="loginPasswordInput" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="#">¿Olvidaste tu contraseña?</a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check float-end">
+                                            <input class="form-check-input" type="checkbox" value="" id="rememberCheck">
+                                            <label class="form-check-label" for="rememberCheck">
+                                                Recuerdame
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center" style="margin-top: 30px;">
+
+                                    <a style="cursor: pointer;" class="btn_small w-100" onclick="logIn(1)">INICIAR SESIÓN</a>
+                                    <p style="margin-top: 10px;">¿Nuevo? <a onclick="showForm(1)" style="cursor: pointer;"><strong>Crea
+                                        una cuenta</strong></a></p>
+                                </div>
+                            </div>
+                            <div style="display: none;" id="signUpForm">
+                                <h5 class="fw-bold text-center">¡Me alegra mucho que engrandezcas tu familia!</h5>
+                                <div class="mb-3">
+                                    <label for="nameSignUpInput" class="form-label">Nombre y apellido <span
+                                            style="color: red;">*</span></label>
+                                    <input type="text" class="form-control" id="nameSignUpInput">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emailInput" class="form-label">Dirección de correo electrónico <span
+                                            style="color: red;">*</span></label>
+                                    <input type="email" class="form-control" id="emailInput">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPasswordInput" class="form-label">Crea contraseña <span
+                                            style="color: red;">*</span></label>
+                                    <input type="password" class="form-control" id="signupPasswordInput">
+                                </div>
+                                <div class="text-center" style="margin-top: 30px;">
+                                    <a href="#" class="btn_small w-100" onclick="logIn(2)">CONFIGURAR TU CUENTA</a>
+                                    <p style="margin-top: 10px;">¿Ya tienes cuenta? <a onclick="showForm(0)"
+                                            style="cursor: pointer;"><strong>Inicia sesión aquí</strong></a></p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Login modal-->
+
+
+        
+        <div class="hero">
+            <h1 class="title">ANIMALITOS A ADOPTAR</h1>
+        </div>
+        <div class="categories">
+            <nav>
+                <h3>
+                    <a onclick="showSection(0)">TODOS</a>
+                    <a onclick="showSection(1)">PERROS</a>
+                    <a onclick="showSection(2)">GATOS</a>
+                    <a onclick="showSection(3)" class="border_right">OTROS</a>
+                </h3>
+            </nav>
+        </div>
+
+        <div class="gallery">
+            <div id="all" style="display: none;">
+                <div class="row mx-auto text-center">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_1.jpg'); background-size: cover;" id="Lucas el perro"
+                            data-bs-toggle="modal" data-bs-target="#lucasModal">
+                                <h1 class="animal_title mx-auto">LUCAS</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 3 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_2.jpg'); background-size: cover;" id="Moro el perro"
+                            data-bs-toggle="modal" data-bs-target="#moroModal">
+                                <h1 class="animal_title mx-auto">MORO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_1.jpg'); background-size: cover;" id="Caramelo el gato"
+                            data-bs-toggle="modal" data-bs-target="#carameloModal">
+                                <h1 class="animal_title mx-auto">CARAMELO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 9 meses</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_2.jpg'); background-size: cover;" id="Silvestre el gato"
+                            data-bs-toggle="modal" data-bs-target="#silvestreModal">
+                                <h1 class="animal_title mx-auto">SILVESTRE</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div id="dog_3" class="animal_card mx-auto" style="background-image: url('./images/animals/dog_3.jpg'); background-size: cover;" id="Chiquita la perrita"
+                            data-bs-toggle="modal" data-bs-target="#chiquitaModal">
+                                <h1 class="animal_title mx-auto">CHIQUITA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 9 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div id="dog_4" class="animal_card mx-auto" style="background-image: url('./images/animals/dog_4.jpg'); background-size: cover;" id="Sombra la perrita"
+                            data-bs-toggle="modal" data-bs-target="#sombraModal">
+                                <h1 class="animal_title mx-auto">SOMBRA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_3.jpg'); background-size: cover;" id="Simón el gato"
+                            data-bs-toggle="modal" data-bs-target="#simonModal">
+                                <h1 class="animal_title mx-auto">SIMÓN</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 4 meses</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_4.jpg'); background-size: cover;" id="Linda la gatita"
+                            data-bs-toggle="modal" data-bs-target="#lindaModal">
+                                <h1 class="animal_title mx-auto">LINDA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 4 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/bird_1.jpg'); background-size: cover;" id="Lorito el perico"
+                            data-bs-toggle="modal" data-bs-target="#loritoModal">
+                                <h1 class="animal_title mx-auto">LORITO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 1 año</h5>
+                            <h5>Especie: Perico</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/erizo_1.jpg'); background-size: cover;" id="Otto el erizo"
+                            data-bs-toggle="modal" data-bs-target="#ottoModal">
+                                <h1 class="animal_title mx-auto">OTTO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 meses</h5>
+                            <h5>Especie: Erizo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/rabbit_1.jpg'); background-size: cover;" id="Nube la coneja"
+                            data-bs-toggle="modal" data-bs-target="#nubeModal">
+                                <h1 class="animal_title mx-auto">NUBE</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 meses</h5>
+                            <h5>Especie: Conejo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/rabbit_2.jpg'); background-size: cover;" id="Boris el conejo"
+                            data-bs-toggle="modal" data-bs-target="#borisModal">
+                                <h1 class="animal_title mx-auto">BORIS</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 8 meses</h5>
+                            <h5>Especie: Conejo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div id="dog_5" class="animal_card mx-auto" style="background-image: url('./images/animals/dog_5.jpg'); background-size: cover;" id="Oliver el perro"
+                            data-bs-toggle="modal" data-bs-target="#oliverModal">
+                                <h1 class="animal_title mx-auto">OLIVER</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 10 meses</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_5.jpg'); background-size: cover;" id="Ruby la gatita"
+                            data-bs-toggle="modal" data-bs-target="#rubyModal">
+                                <h1 class="animal_title mx-auto">RUBY</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/hamster_1.jpg'); background-size: cover;" id="Spidy el hamster"
+                            data-bs-toggle="modal" data-bs-target="#spidyModal">
+                                <h1 class="animal_title mx-auto">SPIDY</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 meses</h5>
+                            <h5>Especie: Hamster</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dogs" style="display: none;">
+                <div class="row mx-auto text-center">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_1.jpg'); background-size: cover;" id="Lucas el perro"
+                            data-bs-toggle="modal" data-bs-target="#lucasModal">
+                                <h1 class="animal_title mx-auto">LUCAS</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 3 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_2.jpg'); background-size: cover;" id="Moro el perro"
+                            data-bs-toggle="modal" data-bs-target="#moroModal">
+                                <h1 class="animal_title mx-auto">MORO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_3.jpg'); background-size: cover;" id="Chiquita la perrita"
+                            data-bs-toggle="modal" data-bs-target="#chiquitaModal">
+                                <h1 class="animal_title mx-auto">CHIQUITA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 9 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_4.jpg'); background-size: cover;" id="sombra la perrita"
+                            data-bs-toggle="modal" data-bs-target="#sombraModal">
+                                <h1 class="animal_title mx-auto">SOMBRA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/dog_5.jpg'); background-size: cover;" id="oliver el perro"
+                            data-bs-toggle="modal" data-bs-target="#oliverModal">
+                                <h1 class="animal_title mx-auto">OLIVER</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 10 meses</h5>
+                            <h5>Especie: Perro</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cats" style="display: none;">
+                <div class="row mx-auto text-center">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_1.jpg'); background-size: cover;" id="caramelo el gato"
+                            data-bs-toggle="modal" data-bs-target="#carameloModal">
+                                <h1 class="animal_title mx-auto">CARAMELO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 9 meses</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_2.jpg'); background-size: cover;" id="silvestre el gato"
+                            data-bs-toggle="modal" data-bs-target="#silvestreModal">
+                                <h1 class="animal_title mx-auto">SILVESTRE</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_3.jpg'); background-size: cover;" id="simon el gato"
+                            data-bs-toggle="modal" data-bs-target="#simonModal">
+                                <h1 class="animal_title mx-auto">SIMÓN</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 4 meses</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_4.jpg'); background-size: cover;" id="linda la gatita"
+                            data-bs-toggle="modal" data-bs-target="#lindaModal">
+                                <h1 class="animal_title mx-auto">LINDA</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 4 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/cat_5.jpg'); background-size: cover;" id="ruby la gatita"
+                            data-bs-toggle="modal" data-bs-target="#rubyModal">
+                                <h1 class="animal_title mx-auto">RUBY</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 años</h5>
+                            <h5>Especie: Gato</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="others" style="display: none;">
+                <div class="row mx-auto text-center">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/bird_1.jpg'); background-size: cover;" id="lorito el perico"
+                            data-bs-toggle="modal" data-bs-target="#loritoModal">
+                                <h1 class="animal_title mx-auto">LORITO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 1 año</h5>
+                            <h5>Especie: Perico</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/erizo_1.jpg'); background-size: cover;" id="otto el erizo"
+                            data-bs-toggle="modal" data-bs-target="#ottoModal">
+                                <h1 class="animal_title mx-auto">OTTO</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 meses</h5>
+                            <h5>Especie: Erizo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/rabbit_1.jpg'); background-size: cover;" id="nube la coneja"
+                            data-bs-toggle="modal" data-bs-target="#nubeModal">
+                                <h1 class="animal_title mx-auto">NUBE</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 6 meses</h5>
+                            <h5>Especie: Conejo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/rabbit_2.jpg'); background-size: cover;" id="boris el conejo"
+                            data-bs-toggle="modal" data-bs-target="#borisModal">
+                                <h1 class="animal_title mx-auto">BORIS</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 8 meses</h5>
+                            <h5>Especie: Conejo</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="animal_card mx-auto" style="background-image: url('./images/animals/hamster_1.jpg'); background-size: cover;"  id="spidy el hamster"
+                            data-bs-toggle="modal" data-bs-target="#spidyModal">
+                                <h1 class="animal_title mx-auto">SPIDY</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Edad: 2 meses</h5>
+                            <h5>Especie: Hamster</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        <!--Animals cards-->
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="lucasModal" tabindex="-1" aria-labelledby="lucasModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/dog_1.jpg" alt="Lucas">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> LUCAS </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Perro</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Mixta</li>
+                                        <li><b>Edad:</b> 3 años</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Café</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Limpiar sus patitas después de un paseo para evitar infecciones estomacales</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de las calles, con desnutrición y con algunas infecciones en la piel. Desde siempre
+                                        fue muy amigable y por supuesto le encanta comer aunque sin duda los premios lo hacen muy feliz.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Animals cards-->
+        <div class="modal fade" id="moroModal" tabindex="-1" aria-labelledby="moroModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/dog_2.jpg" alt="Moro">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> MORO </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Perro</li>
+                                        <li><b>Tamaño:</b> Grande</li>
+                                        <li><b>Raza:</b> Golden Retriever</li>
+                                        <li><b>Edad:</b> 3 años</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Café</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Limpiar sus patitas después de un paseo para evitar infecciones estomacales y en piel</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de una casa, debido a que era maltratao y mul mal nutrido. Es un perro muy cariñoso y le hace mucha falta que alguien aproveche ese amor que tiene para dar y es muy cuidador.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="carameloModal" tabindex="-1" aria-labelledby="carameloModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/cat_1.jpg" alt="caramelo">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> CARAMELO </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Gato</li>
+                                        <li><b>Tamaño:</b> Pequeño</li>
+                                        <li><b>Raza:</b> Cálico</li>
+                                        <li><b>Edad:</b> 9 meses</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Tricolor</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerla con su collar y su placa con los datos de contacto del dueño.</li>
+                                        <li>Evitar que salga a las calles y asignar un espacio dentro de la casa esclusivamente para ella.</li>
+                                        <li>Cuenta con sus vacunas y esterilización.</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Esta felina fue hallada en las calles unos meses más pequeña sin ningún otro gato de compañia. Es una gatita muy tierna, duerme mucho y es poco juguetona, por lo que le gusta estar más tiempo sola, sin embargo, necesita ser vigilada para que no se escape.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="silvestreModal" tabindex="-1" aria-labelledby="silvestreModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/cat_2.jpg" alt="Silvestre">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> SILVESTRE </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Gato</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Smoking</li>
+                                        <li><b>Edad:</b> 2 años</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Blanco y negro</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Tener cuidado que no escape de casa</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Silvestre es un gatito que andaba en las calles y le gusta mucho andar de noche, es muy territorial, por lo cual es recomendable vigilarlo de noche porque se puede escapar y debido a su temperamento puede salir lastimado o lastimar a otros gatitos.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="chiquitaModal" tabindex="-1" aria-labelledby="chiquitaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/dog_3.jpg" alt="Chiquita">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> CHIQUITA </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Perro</li>
+                                        <li><b>Tamaño:</b> Pequeño</li>
+                                        <li><b>Raza:</b> Chihuahua</li>
+                                        <li><b>Edad:</b> 9 años</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Negro</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Limpiar sus patitas después de un paseo para evitar infecciones estomacales</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Esta pequeñita fue dejada en el refugio debido a que su dueña anterior fallecio y no tenía con quien más quedarse. Es una perrita muy educada y cariñosa.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="sombraModal" tabindex="-1" aria-labelledby="sombraModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/dog_4.jpg" alt="sombra">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> SOMBRA </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Perro</li>
+                                        <li><b>Tamaño:</b> Grande</li>
+                                        <li><b>Raza:</b> Mixta</li>
+                                        <li><b>Edad:</b> 2 años</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Café</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerla con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Limpiar sus patitas después de un paseo para evitar infecciones estomacales</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Fue rescatado de las calles, con desnutrición y era muy insegura, por lo que no se dejaba tocar por las personas. Ahora todos son sus amigos en el refugio y así es como ha aceptado acercarse a las personas, sigue siendo tímida pero es juguetona.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="simonModal" tabindex="-1" aria-labelledby="simonModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/cat_3.jpg" alt="simon">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> SIMÓN </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Gato</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Criollo</li>
+                                        <li><b>Edad:</b> 4 meses</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Naranja y blanco</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Tener muchos juguetes con que distraerlo y tener un espacio exclusivo para el gatito</li>
+                                        <li>Cuenta con sus vacunas </li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de las calles, es agresivo debido a que esta pequeño, no convivia con otros animales callejeros y tenía rasgos de ser atacado. Ahora esta siendo entrenado para ayudarlo a convivir con las personas, aunque aún es agresivo y temeroso.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lindaModal" tabindex="-1" aria-labelledby="lindaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/cat_4.jpg" alt="Linda">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> LINDA </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Gato</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Criollo</li>
+                                        <li><b>Edad:</b> 4 años</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Café y blanco</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Tener un espacio asignado para que el felino pueda descansar tranquila.</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Linda, es una gatita que fue rescatada de las calles, lleva tiempo en el refugio, pero de ahí el nombre. es muy tierna y amorosa, le gusta siempre estar en compañia y aunque casi no juega siempre quiere atención.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="loritoModal" tabindex="-1" aria-labelledby="loritoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/bird_1.jpg" alt="Lorito">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> LORITO </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Ave</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Baribinaranja</li>
+                                        <li><b>Edad:</b> 1 años</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Verde</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Tenerlo siempre dentro del hogar</li>
+                                        <li>Llevar al veterinario mensualemnete para corte de alas y garras</li>
+                                        <li>Cuenta con sus vacunas</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de un mercado donde lo comercializaban y lo tenían en muy malas condicones. Debido a que en el refugio tenemos otros animales no puede estar fuera de su casa, por lo que se busca un hogar en el cual pueda estar fuera de su jaula y libre. Es un poco agresivo cuando tiene miedo y no le gusta el agua.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ottoModal" tabindex="-1" aria-labelledby="ottoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/erizo_1.jpg" alt="Otto">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> OTTO </p>
+                                <h5>
+                                 <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Erizo</li>
+                                        <li><b>Tamaño:</b> Pequeño</li>
+                                        <li><b>Raza:</b> Europeo</li>
+                                        <li><b>Edad:</b> 6 meses</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Marrón</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo en sitios limpios libres de polvo o pelusas</li>
+                                        <li>Bañarlo con espuma o con un paño húmedo</li>
+                                        <li>Cuenta con sus vacunas</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Debido a que es un erizo café sus anteriores dueños lo dejaron en una veterinaria y estos animalitos requieren de gran cuidado y observación, por lo que se decidió llevarlo a un refugio para mantenerlo sano y brindarle la atención que necesita. Aunque sigue en busca de un dueño que le ofrzca mucho amor y pueda estar con él en todo momento, ya que son muy cariñosos y les gusta estar acompañados.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nubeModal" tabindex="-1" aria-labelledby="nubeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/rabbit_1.jpg" alt="Nube">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> NUBE </p>
+                                <h5>
+                                   <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Conejo</li>
+                                        <li><b>Tamaño:</b> Pequeño</li>
+                                        <li><b>Raza:</b> Conejo blanco de Florida</li>
+                                        <li><b>Edad:</b> 6 meses</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Blanco</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Se recomienda tener un jardín donde pueda explorar y jugar</li>
+                                        <li>Bañarlo con espuma o un paño húmedo</li>
+                                        <li>Cuenta con sus vacunas</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Esta pequeña conejita fue rescatada de un mercado donde se comercializaba, estaba en muy malas condicones y no bien alimentada. Esta raza de conejos es muy inquieta por lo que requiere siempre estar distraída con juguetes o comiendo, es cariñoa y amigable.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="borisModal" tabindex="-1" aria-labelledby="borisModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/rabbit_2.jpg" alt="Boris">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> BORIS </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Conejo</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Mixta</li>
+                                        <li><b>Edad:</b> 8 meses</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Café</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Se recomienda tener un jardín donde pueda explorar y jugar</li>
+                                        <li>Bañarlo con espuma o un paño húmedo</li>
+                                        <li>Cuenta con sus vacunas</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de una casa que lo tenia descuidado y poco nutrido, por lo que se llevo al refugio y se le quiere dar un hogar digno donde pueda obtener mucho amor y entretenerse de forma sana.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="oliverModal" tabindex="-1" aria-labelledby="oliverModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/dog_5.jpg" alt="Oliver">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> OLIVER </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Perro</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Mixta</li>
+                                        <li><b>Edad:</b> 10 meses</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Amarillo</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Limpiar sus patitas después de un paseo para evitar infecciones estomacales</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este gran amigo fue rescatado de las calles, con desnutrición y con algunas infecciones en la piel. Desde siempre
+                                        fue muy amigable y por supuesto le encanta comer aunque sin duda los premios lo hacen muy feliz.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="rubyModal" tabindex="-1" aria-labelledby="rubyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/cat_5.jpg" alt="Ruby">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> RUBY </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Gato</li>
+                                        <li><b>Tamaño:</b> Mediano</li>
+                                        <li><b>Raza:</b> Mixta</li>
+                                        <li><b>Edad:</b> 2 años</li>
+                                        <li><b>Sexo:</b> Hembra</li>
+                                        <li><b>Color:</b> Amarillo</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su collar y su placa con los datos de contacto del dueño</li>
+                                        <li>Aisgnarle un espacio donde jugar y dormir en tranquilidad</li>
+                                        <li>Cuenta con sus vacunas y esterilización</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Esta amiguita fue rescatada de las calles, presentaba heridas de pelea y era muy poco cariñosa, pero en el refugio ha aprendido a convivivr con más animales y así puede también jugar y ser cariñosa cuando lo requiere.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="spidyModal" tabindex="-1" aria-labelledby="spidyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="w-100">
+                            <img style="cursor: pointer;" class="login_close_img float-end" data-bs-dismiss="modal"
+                                aria-label="Close" src="./icons/cerrar.svg" alt="cerrar">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 text-center">
+                                <img class="descrip_img" src="./images/animals/hamster_1.jpg" alt="spidy">
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="descrip_name"> SPIDY </p>
+                                <h5>
+                                    <strong style="color:#693619;"> Características: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li><b>Especie:</b> Roedor</li>
+                                        <li><b>Tamaño:</b> Pequeño</li>
+                                        <li><b>Raza:</b> Hamster</li>
+                                        <li><b>Edad:</b> 2 meses</li>
+                                        <li><b>Sexo:</b> Macho</li>
+                                        <li><b>Color:</b> Bicolor blanco</li>
+                                    </ul>
+                                
+                                    <strong style="color:#693619;"> Cuidados específicos: </strong>
+                                    <br>
+                                    <ul class="mark_list">
+                                        <li>Mantenerlo con su burbuja dentro de casa para evitar accientes con la mascota</li>
+                                        <li>Bañarlo con espuma o con un paño húmedo</li>
+                                        <li>Cuenta con sus vacunas</li>
+                                    </ul>
+                                </h5>
+                                <h4>
+                                    <strong style="color:#693619;"> Historia: </strong>
+                                    <p>Este pequeño amigo fue resguardado en el refugio debido a que la persona que lo tenía no tenía las habilidades para cuidarlo y estaba en muy malas condiciones. Por el momento esta saludable, pero le hace falta mucho cariño y mucho jugar, ya que como esta pequeño, es muy travieso pero muy divertido.</p>
+                                </h4>
+                                <a href="./adoption.html" class="btn_normal">¡QUIERO ADOPTARLO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<footer>
+    <div class="footer_content">
+        <img class="footer_logo" src="./logo/blanco.png" alt="PATITAS A CASA">
+
+        <ul class="social">
+            <li><a href="#"><img class="footer_img" src="./icons/facebook.svg" alt="Facebook"></a> </li>
+            <li><a href="#"><img class="footer_img" src="./icons/instagram.svg" alt="Instragram"></a> </li>
+            <li><a href="#"><img class="footer_img" src="./icons/youtube.svg" alt="Youtube"></a> </li>
+            <li><a href="#"><img class="footer_img" src="./icons/twitter.svg" alt="Twitter"></a> </li>
+            <li><a href="#"><img class="footer_img" src="./icons/whatsapp.svg" alt="Whatsapp"></a> </li>
+        </ul>
+
+        <ul class="contact">
+            <li>
+                <img class="footer_img" src="./icons/ubicacion.svg" alt="Ubicación">
+                <p>Lorem ipsum dolor sit amet consectetur,
+                    adipiscing elit aliquet nunc. 56259</p>
+            </li>
+            <li>
+                <img class="footer_img" src="./icons/correo.svg" alt="Correo">
+                <p>adoptar@patitasacasa.com.mx</p>
+            </li>
+            <li>
+                <img class="footer_img" src="./icons/telefono.svg" alt="Télefono">
+                <p>55 0000 0000</p>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+</html>

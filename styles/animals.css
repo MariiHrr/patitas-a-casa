@@ -1,0 +1,178 @@
+.hero {
+    height: 150px;
+    background-image: url('./../images/animals/all_input_op3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    padding: 50px 0px 0px 80px;
+    font-family: 'Lilita One';
+    font-style: normal;
+    letter-spacing: 0.1em;
+    font-size: 2rem;
+    -webkit-text-fill-color: #F6E8EA;
+    -webkit-text-stroke: 2px #000;
+    text-align: left;
+}
+
+.gallery {
+    margin: 25px 0px 25px 0px;
+}
+
+.animal_card {
+    width: 300px;
+    height: 316px;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    margin-top: 2em;
+    margin-bottom: .6em;
+    border-radius: 16px;
+}
+
+.animal_title {
+    align-self: flex-end;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-family: 'Lilita One';
+    -webkit-text-fill-color: #f6e8ea;
+    -webkit-text-stroke: 2px #693619;
+}
+
+.col-lg-4 h5{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: medium;
+    line-height: 16px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 1em;
+}
+
+.categories h3 {
+    text-decoration: none;
+    font-family: Nunito, cursive;
+    font-size: 18px;
+}
+
+.categories nav a {
+    padding: 0 20px;
+    cursor: pointer;
+    height: 24px;
+    list-style: none;
+    text-decoration: none;
+    color: #312f2f;
+    border-left: 3px solid #17bebb;
+}
+
+.categories nav a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+}
+
+.border_right {
+    border-right: 3px solid #17bebb;
+}
+
+h2 {
+    color: #312f2f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-family: 'Lilita One', cursive;
+    text-align: left;
+    margin: 10vh;
+}
+
+.descrip_container {
+    position: relative;
+    background: #f7dccc;
+    border-radius: 15px;
+    margin: 5vh 10vh;
+    height: 70vh;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.descrip_img {
+    height: 300px;
+    width: auto;
+}
+
+.descrip_name {
+    font-family: 'Lilita One', cursive;
+    font-size: 10vh;
+    color: #693619;
+
+}
+
+.descrip_container h5 {
+    font-family: 'Nunito';
+    font-size: medium;
+    color: #693619;
+    column-count: 2;
+    column-gap: 10px;
+    margin-right: 10vh;
+}
+.descrip_container h4 {
+    font-family: 'Nunito';
+    font-size: medium;
+    color: #693619;
+    margin-right: 10vh;
+}
+
+.mark_list {
+    list-style-image: url('./../icons/huesito_cafe.svg');
+}
+
+.btn_normal {
+    color: #693619; 
+    text-decoration: none;
+    padding: 6px 80px;
+    border-radius: 30px;
+    font-family: 'Nunito';
+    letter-spacing: 2px;
+    font-size: larger;
+    transition: .5s;
+    background: rgba(23, 190, 187, 0.8);;
+    box-shadow: inset 3px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    margin-right: 50vh;
+    margin-top: 3vh;
+}
+
+.btn_normal:hover {
+    background-color: #17bebb;
+    box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+.login_close_img {
+    width: 4vh;
+}
+
+.col-lg-4 img {
+    border-radius: 16px;
+}
+
+.col-lg-8 h5 {
+    font-family: 'Nunito';
+    font-size: 1em;
+    line-height: 25px;
+    columns: 250px 2;
+    column-gap: 1px;
+}
+
+.col-lg-8 h4 {
+    font-family: 'Nunito';
+    font-size: 1em;
+    line-height: 25px;
+    margin-bottom: 4vh;
+}

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500&display=swap');
+
+html body {
+    font-family: 'Nunito';
+    background: #FFF6F6;
+}
+
+h2 {
+    color: rgb(31, 2f, 2f);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-family: 'Lilita One', cursive;
+    text-align: center;
+}
+
+.btn_normal {
+    background-color: #693619;
+    color: black; 
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-family: 'Nunito';
+    font-size: 20px;
+    transition: .5s;
+    background: rgba(239, 98, 108, 0.6);
+    box-shadow: inset 3px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.btn_normal:hover {
+    background-color: #EF626C;
+    box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.25);
+    color: #F6E8EA;   
+}
+
+.btn_small {
+    background-color: #693619;
+    color: black; 
+    text-decoration: none;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-family: 'Nunito';
+    font-size: 20px;
+    transition: .5s;
+    background: rgba(239, 98, 108, 0.6);
+    box-shadow: inset 3px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.btn_small:hover {
+    background-color: #EF626C;
+    color:#f6e8ea;
+}
+
+footer {
+    background: #693619;
+    height: auto;
+    padding-top: 40px;
+}
+
+.footer_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer_content svg {
+    display: flex;
+    height: 30px;
+    width: auto;
+    gap: 25px;
+}
+
+.footer_logo {    
+    height: 100px;
+    width: auto;    
+}
+
+.footer_img {
+    position: absolute;
+    height: 30px;
+    width: auto;
+    gap: 25px;
+}
+
+.social {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;    
+    padding-left: 0;
+}
+
+.social li {
+    margin: 0 30px;
+}
+
+.contact {
+    text-align: left !important;
+    list-style: none;
+}
+
+.contact p {
+    margin-left: 50px;
+    font-size: 14px;
+    color: #f6e8ea ;
+}
+
+.login_modal {
+    background: #f6e8ea;
+    border-radius: 20px;
+}
+
+.login_close_img {
+    width: 6%;
+}
+
+.login_form {
+    margin: 30px 20px 30px 20px;
+}
+
+.login_form input {
+    border-radius: 20px;
+}

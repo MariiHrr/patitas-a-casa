@@ -1,0 +1,72 @@
+.adoption_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 40px 0px 40px 0px;
+}
+
+.mark_list {
+    list-style-image: url('./../icons/huella-negro-vacio.svg');
+}
+
+.mark_list li {
+    font-size: medium;
+    line-height: 1.8em;
+}
+
+
+.list-soltero {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.list-familiar {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.progress-bar {
+    background-color: #EF626C !important;
+    background: url('./../icons/huella-negro-rll.svg') no-repeat right;
+    background-size: contain;
+    border-radius: 15px;
+}
+
+.form_container {
+    padding: 40px 0px 40px 0px;
+    background: #F6E8EA;
+    width: 100% !important;
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    align-self: center;
+}
+
+.form_style {
+    text-align: left;
+    margin: 40px 30px 40px 30px;
+}
+
+.col-lg-8 h1{
+    font-size: xx-large;
+    font-family: 'Lilita One';
+    text-align: center;
+}
+
+.col-lg-8 h2{
+    font-size: 3em;
+    letter-spacing: 1vh;
+    font-family: 'Lilita One';
+    text-align: center;
+}
+
+img.izquierda {
+    width: 20%;
+    height: auto;
+    float: left;
+}
+
+img.derecha {
+    width: 15%;
+    height:auto;
+    float: right;
+}
